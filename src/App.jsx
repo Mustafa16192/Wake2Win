@@ -5,62 +5,67 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const brand = {
-  name: "Wake To Win",
+  name: "Wake2Win",
 };
 
 const navItems = [
   { label: "Why", href: "#why" },
-  { label: "Product", href: "#product" },
-  { label: "Modes", href: "#modes" },
+  { label: "Hardware", href: "#hardware" },
+  { label: "Companion", href: "#companion" },
   { label: "Waitlist", href: "#waitlist" },
 ];
 
 const pillars = [
   {
-    title: "Passive alarms fail.",
-    body: "Most alarms can be silenced while you are still half asleep. The sound stops, but the morning never starts.",
+    title: "Phone alarms are too easy to kill.",
+    body:
+      "A swipe is not a wake-up ritual. Most people can shut off a phone alarm while still half asleep and drift right back out.",
   },
   {
-    title: "Wake-up friction matters.",
-    body: "Wake To Win adds short cognitive effort at exactly the moment users usually snooze, swipe, and disappear back into bed.",
+    title: "Physical interaction changes the moment.",
+    body:
+      "Wake2Win makes the user complete a short tactile challenge on the device itself before the alarm can stop.",
   },
   {
-    title: "The goal is action.",
-    body: "This is not a sleep-tracking dashboard. It is a wake-up habit app designed to get students and young professionals moving.",
+    title: "The app supports. The device decides.",
+    body:
+      "A companion app handles setup and preferences, but the bedside hardware remains the only place where the alarm is truly dismissed.",
   },
 ];
 
-const featureList = [
-  "Word puzzle wake-up challenge",
-  "Quick math and memory modes",
-  "Escalating anti-snooze difficulty",
-  "Morning streaks and wake-up history",
+const hardwareFeatures = [
+  "Built-in tactile challenge interface",
+  "Escalating sound and light routine",
+  "Compact footprint for dorms and small bedrooms",
+  "Reliable local alarm path even if the phone is gone",
 ];
 
-const challengeModes = [
-  {
-    name: "Word",
-    detail: "The most demo-friendly mode. Solve a short word puzzle before the alarm dismisses.",
-  },
-  {
-    name: "Math",
-    detail: "Fast arithmetic for users who need a sharper mental jolt than a swipe gesture.",
-  },
-  {
-    name: "Memory",
-    detail: "Repeat a short sequence correctly to prove you are actually awake and attentive.",
-  },
-  {
-    name: "Logic",
-    detail: "Answer a simple prompt that forces deliberate thought before the sound stops.",
-  },
+const companionFeatures = [
+  "Wi-Fi pairing and first-time setup",
+  "Recurring alarms and weekday presets",
+  "Challenge difficulty and wake-up intensity controls",
+  "Device status, firmware, and room-friendly preferences",
 ];
 
-const premiumItems = [
-  "Multiple challenge modes",
-  "Difficulty tuning for heavy snoozers",
-  "Wake-up analytics and streak history",
-  "Custom morning routines after dismissal",
+const wakeFlow = [
+  {
+    step: "01",
+    title: "Set the routine in the app",
+    body:
+      "Pair the device, choose the alarm schedule, and tune challenge intensity without turning the phone into the product.",
+  },
+  {
+    step: "02",
+    title: "Wake on hardware",
+    body:
+      "At the bedside, Wake2Win uses sound, light, and a physical challenge to interrupt passive snoozing before the day falls apart.",
+  },
+  {
+    step: "03",
+    title: "Dismiss only after real interaction",
+    body:
+      "The alarm ends when the user completes the device challenge, not when they tap a screen while still cognitively offline.",
+  },
 ];
 
 function App() {
@@ -203,63 +208,68 @@ function App() {
         <section className="hero section-dark" id="hero">
           <div className="container hero-grid">
             <div className="hero-copy js-hero-copy">
-              <span className="eyebrow eyebrow-blue">Wake-up habit app</span>
-              <h1>Stop silencing your alarm half asleep.</h1>
+              <span className="eyebrow eyebrow-blue">Hardware wake-up device</span>
+              <h1>A bedside alarm that makes waking up real.</h1>
               <p className="hero-lede">
-                Wake To Win helps students and young professionals stop oversleeping by
-                requiring short cognitive wake-up challenges before the alarm can be
-                dismissed.
+                Wake2Win is a dorm-friendly hardware device that requires a short
+                physical challenge before the alarm can shut off. A companion app
+                handles setup, schedules, and control without replacing the device.
               </p>
 
               <div className="hero-actions">
                 <a className="button button-primary" href="#waitlist">
                   Get early access
                 </a>
-                <a className="button button-secondary" href="#product">
-                  See how it works
+                <a className="button button-secondary" href="#hardware">
+                  See the system
                 </a>
               </div>
 
               <div className="hero-footnotes">
-                <span>Built for early classes, early shifts, and mornings that matter.</span>
-                <span>Word puzzles are the hook. Active wake-up behavior is the product.</span>
+                <span>Built for dorms, early classes, and mornings that matter.</span>
+                <span>The device owns dismissal. The app stays secondary.</span>
               </div>
             </div>
 
             <div className="hero-visual js-hero-device">
-              <div className="phone-frame phone-frame-hero">
-                <div className="phone-status">
-                  <span>6:45</span>
-                  <span>Challenge alarm</span>
+              <div className="hero-hardware">
+                <div className="smart-display">
+                  <div className="smart-display-screen">
+                    <div className="device-top">
+                      <span>Wake2Win</span>
+                      <span>6:45 AM alarm</span>
+                    </div>
+
+                    <div className="hero-device-main">
+                      <div className="hero-device-time-block">
+                        <p className="screen-label">Dismiss requires interaction</p>
+                        <div className="alarm-time">6:45</div>
+                        <p className="alarm-caption">Wake up before the sound stops.</p>
+                      </div>
+
+                      <div className="hero-device-panel">
+                        <span className="metric-label">Challenge mode</span>
+                        <strong>Memory sequence</strong>
+                        <span>Escalates after failed attempts</span>
+                      </div>
+                    </div>
+
+                    <div className="device-pad" aria-hidden="true">
+                      <span className="device-key device-key-active" />
+                      <span className="device-key" />
+                      <span className="device-key" />
+                      <span className="device-key" />
+                    </div>
+
+                    <button className="screen-cta" type="button">
+                      Start challenge
+                    </button>
+                  </div>
                 </div>
 
-                <div className="hero-screen">
-                  <p className="screen-label">Dismiss requires a challenge</p>
-                  <div className="alarm-time">6:45</div>
-                  <p className="alarm-caption">Wake up enough to act.</p>
-
-                  <div className="word-grid" aria-hidden="true">
-                    <span>W</span>
-                    <span>A</span>
-                    <span>K</span>
-                    <span>E</span>
-                    <span className="word-grid-muted">_</span>
-                  </div>
-
-                  <div className="screen-card">
-                    <div>
-                      <strong>Current mode</strong>
-                      <span>Word challenge</span>
-                    </div>
-                    <div>
-                      <strong>Failsafe</strong>
-                      <span>Escalate after 2 snoozes</span>
-                    </div>
-                  </div>
-
-                  <button className="screen-cta" type="button">
-                    Start challenge
-                  </button>
+                <div className="smart-display-dock" aria-hidden="true">
+                  <span className="smart-display-support" />
+                  <span className="smart-display-base" />
                 </div>
               </div>
             </div>
@@ -269,12 +279,11 @@ function App() {
         <section className="section-light" id="why">
           <div className="container intro-stack">
             <div className="section-heading js-reveal">
-              <span className="eyebrow">Why it matters</span>
-              <h2>Alarms are everywhere. Real wake-up behavior is not.</h2>
+              <span className="eyebrow">Why hardware</span>
+              <h2>Morning discipline is a physical problem, not a better notification.</h2>
               <p>
-                The problem is not that people forget to set alarms. The problem is that
-                most alarms are too easy to dismiss while the user is still cognitively
-                offline.
+                Wake2Win is built around one idea: students oversleep because standard
+                alarms are too easy to dismiss while the user is still half asleep.
               </p>
             </div>
 
@@ -289,110 +298,102 @@ function App() {
           </div>
         </section>
 
-        <section className="section-dark" id="product">
+        <section className="section-dark" id="hardware">
           <div className="container feature-split">
             <div className="section-heading section-heading-light js-reveal">
-              <span className="eyebrow eyebrow-blue">Product</span>
-              <h2>Wake-up friction that works before your day falls apart.</h2>
+              <span className="eyebrow eyebrow-blue">Hardware first</span>
+              <h2>The bedside device is the moat, not just the software behind it.</h2>
               <p>
-                Wake To Win turns alarm dismissal into active engagement. Instead of a
-                passive swipe, the user has to complete a short challenge that proves they
-                are awake enough to move.
+                Wake2Win is designed as a dedicated object for the nightstand. It
+                delivers the wake-up event locally, forces real interaction, and keeps
+                the dismissal challenge off the phone.
               </p>
 
               <ul className="feature-list">
-                {featureList.map((item) => (
+                {hardwareFeatures.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
 
             <div className="product-panel js-reveal">
-              <div className="phone-frame phone-frame-midnight">
-                <div className="phone-status">
-                  <span>7:10</span>
-                  <span>Morning progress</span>
+              <div className="device-card">
+                <div className="device-copy">
+                  <span className="metric-label">Designed for dorm rooms</span>
+                  <strong>Compact, tactile, and hard to ignore.</strong>
                 </div>
 
-                <div className="analytics-screen">
-                  <div className="metric-card">
-                    <span className="metric-label">On-time streak</span>
-                    <strong>12 mornings</strong>
-                  </div>
-
-                  <div className="chart-card">
-                    <span className="metric-label">Wake-up trend</span>
-                    <div className="chart-bars" aria-hidden="true">
-                      <span />
-                      <span />
-                      <span className="chart-bars-active" />
-                      <span />
-                      <span />
-                    </div>
-                  </div>
-
-                  <div className="timeline-card">
-                    <div>
-                      <strong>6:45 alarm</strong>
-                      <span>Dismissed after 38 seconds</span>
-                    </div>
-                    <div>
-                      <strong>Routine</strong>
-                      <span>Water, light, movement</span>
-                    </div>
-                  </div>
+                <div className="device-step-grid">
+                  {wakeFlow.map((item) => (
+                    <article className="timeline-card" key={item.step}>
+                      <span className="step-label">{item.step}</span>
+                      <strong>{item.title}</strong>
+                      <span>{item.body}</span>
+                    </article>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section-light" id="modes">
+        <section className="section-light" id="companion">
           <div className="container modes-layout">
             <div className="modes-copy js-reveal">
-              <span className="eyebrow">Challenge system</span>
-              <h2>One memorable hook. A broader system behind it.</h2>
+              <span className="eyebrow">Companion app</span>
+              <h2>Useful before bed. Not responsible in the morning.</h2>
               <p>
-                The first impression is a Wordle-style challenge. The real product is a
-                flexible wake-up challenge system that can adapt to different users and
-                different levels of resistance.
+                The companion app exists to provision the device, manage schedules, and
+                tune wake-up behavior. It supports the system without turning Wake2Win
+                back into another alarm app.
               </p>
 
               <div className="modes-grid">
-                {challengeModes.map((mode) => (
-                  <article className="mode-card" key={mode.name}>
-                    <h3>{mode.name}</h3>
-                    <p>{mode.detail}</p>
+                {companionFeatures.map((item) => (
+                  <article className="mode-card" key={item}>
+                    <h3>{item}</h3>
+                    <p>
+                      Companion functionality that improves setup and control while the
+                      hardware remains fully responsible for the wake-up moment.
+                    </p>
                   </article>
                 ))}
               </div>
             </div>
 
             <div className="pricing-panel js-reveal">
-              <div className="pricing-card">
-                <span className="eyebrow eyebrow-blue">Freemium structure</span>
-                <h3>Start free. Upgrade when mornings are expensive.</h3>
-                <p>
-                  The free version gets users into the habit. Premium adds more challenge
-                  depth, more control, and better wake-up visibility.
-                </p>
-
-                <div className="tier-row">
-                  <div className="tier-block">
-                    <span className="tier-label">Free</span>
-                    <strong>Alarm + one challenge mode</strong>
-                  </div>
-                  <div className="tier-block">
-                    <span className="tier-label">Premium</span>
-                    <strong>Customization, analytics, stricter anti-snooze</strong>
-                  </div>
+              <div className="phone-frame phone-frame-hero phone-frame-companion">
+                <div className="phone-status">
+                  <span>11:04</span>
+                  <span>Device settings</span>
                 </div>
 
-                <ul className="premium-list">
-                  {premiumItems.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <div className="analytics-screen">
+                  <div className="metric-card">
+                    <span className="metric-label">Paired device</span>
+                    <strong>Dorm Room A</strong>
+                  </div>
+
+                  <div className="chart-card">
+                    <span className="metric-label">Weekday alarm</span>
+                    <strong className="companion-time">6:45 AM</strong>
+                  </div>
+
+                  <div className="timeline-card">
+                    <div>
+                      <strong>Challenge mode</strong>
+                      <span>Memory sequence</span>
+                    </div>
+                    <div>
+                      <strong>Escalation</strong>
+                      <span>Sound + light after 2 failed attempts</span>
+                    </div>
+                    <div>
+                      <strong>Connection</strong>
+                      <span>Wi-Fi connected</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -402,10 +403,10 @@ function App() {
           <div className="container cta-layout">
             <div className="section-heading section-heading-light js-reveal">
               <span className="eyebrow eyebrow-blue">Waitlist</span>
-              <h2>Get early access before your next bad morning gets there first.</h2>
+              <h2>Join early access for the first Wake2Win hardware run.</h2>
               <p>
-                Join the early list for product updates, beta invites, and the first build
-                of Wake To Win.
+                Get updates on prototypes, launch timing, and the first version of the
+                device plus companion app.
               </p>
             </div>
 
@@ -424,7 +425,11 @@ function App() {
               />
               {error ? <p className="field-error">{error}</p> : null}
 
-              <button className="button button-primary waitlist-button" disabled={isSubmitting} type="submit">
+              <button
+                className="button button-primary waitlist-button"
+                disabled={isSubmitting}
+                type="submit"
+              >
                 {isSubmitting ? "Joining..." : "Join waitlist"}
               </button>
 
@@ -446,7 +451,7 @@ function App() {
       <footer className="site-footer">
         <div className="container footer-row">
           <span>{brand.name}</span>
-          <span>Wake up enough to act.</span>
+          <span>Physical wake-up discipline for mornings that matter.</span>
         </div>
       </footer>
     </div>
